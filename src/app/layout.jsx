@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Lumière & Basil | Fine Dining',
+  title: 'Restaurant Name | Fine Dining',
   description: 'Experience the essence of modern gastronomy.',
 };
 
