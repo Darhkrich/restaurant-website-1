@@ -27,7 +27,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;               /* ← prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
   color: var(--text-light);
   font-family: var(--font-body);
   line-height: 1.6;
-  overflow-x: hidden;               /* ← double lock */
+  overflow-x: hidden;
   max-width: 100vw;
 }
 
@@ -71,7 +71,7 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  width: 100%;                     /* ensure it doesn't overflow */
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -214,7 +214,7 @@ p {
     backdrop-filter: blur(12px);
     flex-direction: column;
     padding: 25px 20px;
-    gap: 15px;                    /* slightly tighter for small screens */
+    gap: 15px;
     transform: translateY(-10px);
     opacity: 0;
     visibility: hidden;
@@ -352,7 +352,7 @@ p {
    ABOUT
    ============================================= */
 #about {
-  scroll-margin-top: var(--navbar-height);   /* ← FIX: anchor offset */
+  scroll-margin-top: var(--navbar-height);
 }
 
 .about-grid {
@@ -365,6 +365,7 @@ p {
 .about-img-wrapper {
   position: relative;
   order: -1;
+  width: 100%;
 }
 
 .about-img {
@@ -400,6 +401,29 @@ p {
   border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
+/* Mobile: center about content */
+@media (max-width: 767px) {
+  .about-text {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .about-text h2 {
+    text-align: center;
+  }
+  .chef-signature {
+    text-align: center;
+  }
+  .awards {
+    justify-content: center;
+  }
+  .about-img-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop about */
 @media (min-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr 1fr;
@@ -414,7 +438,7 @@ p {
    MENU
    ============================================= */
 #menu {
-  scroll-margin-top: var(--navbar-height);   /* ← FIX */
+  scroll-margin-top: var(--navbar-height);
 }
 
 .menu-section {
@@ -464,6 +488,7 @@ p {
   font-size: 0.85rem;
 }
 
+/* Dietary badges */
 .dietary-badges {
   margin-top: 8px;
   display: flex;
@@ -478,6 +503,7 @@ p {
   letter-spacing: 0.5px;
 }
 
+/* Chef’s Favorites */
 .chef-favorites-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -525,7 +551,7 @@ p {
    GALLERY
    ============================================= */
 #gallery {
-  scroll-margin-top: var(--navbar-height);   /* ← FIX */
+  scroll-margin-top: var(--navbar-height);
 }
 
 .gallery-video {
@@ -741,7 +767,7 @@ p {
    RESERVATION
    ============================================= */
 #reservation {
-  scroll-margin-top: var(--navbar-height);   /* ← FIX */
+  scroll-margin-top: var(--navbar-height);
 }
 
 .reservation-form {
@@ -749,6 +775,17 @@ p {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+/* Mobile: limit width and center */
+@media (max-width: 767px) {
+  .reservation-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .contact-info {
+    text-align: center;
+  }
 }
 
 .form-group {
@@ -783,6 +820,14 @@ p {
   flex-direction: column;
   gap: 15px;
 }
+@media (min-width: 600px) {
+  .form-row {
+    flex-direction: row;
+  }
+  .form-row > * {
+    flex: 1;
+  }
+}
 
 .contact-info {
   list-style: none;
@@ -804,15 +849,6 @@ p {
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-@media (min-width: 600px) {
-  .form-row {
-    flex-direction: row;
-  }
-  .form-row > * {
-    flex: 1;
-  }
 }
 
 /* =============================================
