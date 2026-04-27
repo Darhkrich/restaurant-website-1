@@ -988,7 +988,6 @@ p {
 .lightbox-close:hover {
   color: var(--primary-gold);
 }
-
 @keyframes fadeIn {
   to { opacity: 1; }
 }
