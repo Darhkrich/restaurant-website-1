@@ -1,0 +1,35 @@
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background: var(--text-light);
+  transition: var(--transition);
+}
+
+/* Show hamburger and hide links by default on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none; /* overrides global? we need to be careful */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(18,18,18,0.95);
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+  .active {
+    display: flex;
+  }
+}
