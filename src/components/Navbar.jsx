@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="container nav-content">
-        <div className="logo">Lumière & Basil</div>
+        <div className="logo">Restaurant Name</div>
         
         {/* Hamburger / Close button */}
         <button 
