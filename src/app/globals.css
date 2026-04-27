@@ -1,6 +1,6 @@
 /* =============================================
    GLOBALS.CSS – Lumière & Basil Restaurant
-   Fully Responsive (Mobile First) + Stable
+   Fully Responsive + VisualBreak & Reservation Fixes
    ============================================= */
 
 :root {
@@ -203,7 +203,7 @@ p {
   visibility: visible;
 }
 
-/* MOBILE (max-width 767px) */
+/* MOBILE */
 @media (max-width: 767px) {
   .nav-links {
     position: fixed;
@@ -423,7 +423,6 @@ p {
   }
 }
 
-/* Desktop about */
 @media (min-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr 1fr;
@@ -488,7 +487,6 @@ p {
   font-size: 0.85rem;
 }
 
-/* Dietary badges */
 .dietary-badges {
   margin-top: 8px;
   display: flex;
@@ -503,7 +501,6 @@ p {
   letter-spacing: 0.5px;
 }
 
-/* Chef’s Favorites */
 .chef-favorites-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -738,7 +735,8 @@ p {
    VISUAL BREAK
    ============================================= */
 .visual-break {
-  background: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2070&auto=format&fit=crop') fixed center/cover;
+  background: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+  background-attachment: scroll;  /* Fixed removed for mobile compatibility */
   min-height: 250px;
   height: 400px;
   position: relative;
@@ -770,6 +768,24 @@ p {
   scroll-margin-top: var(--navbar-height);
 }
 
+/* Make the whole reservation section feel like a card on mobile */
+.reservation-wrapper {
+  background: var(--secondary-dark);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 4px;
+  padding: 25px 20px;
+}
+
+/* On desktop we use the about-grid, but on mobile we stack cleanly */
+@media (max-width: 767px) {
+  .reservation-wrapper {
+    padding: 20px 15px;
+  }
+  .about-grid {
+    /* Override for reservation only if needed, but we'll use a div wrapper instead */
+  }
+}
+
 .reservation-form {
   width: 100%;
   display: flex;
@@ -777,11 +793,15 @@ p {
   gap: 15px;
 }
 
-/* Mobile: limit width and center */
+/* Improved spacing and centering for mobile */
 @media (max-width: 767px) {
   .reservation-form {
     max-width: 500px;
     margin: 0 auto;
+    background: var(--primary-dark); /* subtle backdrop */
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
   }
   .contact-info {
     text-align: center;
