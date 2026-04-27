@@ -1,0 +1,166 @@
+/* --------------------------------------------
+   Reservation Section – Clean Card Layout
+   -------------------------------------------- */
+
+.section {
+  padding: 80px 0;
+  background-color: var(--secondary-dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--primary-dark);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Left Panel (Info) ---------- */
+.cardLeft {
+  padding: 40px 30px;
+  background: rgba(212, 175, 55, 0.03);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.heading {
+  font-size: 2rem;
+  color: var(--primary-gold);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contactList {
+  list-style: none;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.contactList li {
+  margin-bottom: 8px;
+}
+
+.openingHours {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.hoursLabel {
+  color: var(--primary-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-size: 0.75rem;
+}
+
+/* ---------- Right Panel (Form) ---------- */
+.cardRight {
+  padding: 40px 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.formGroup {
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--secondary-dark);
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-gold);
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+.submitBtn:hover {
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+}
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Responsive: Side-by-Side on Desktop ---------- */
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .cardLeft {
+    border-bottom: none;
+    border-right: 1px solid rgba(212, 175, 55, 0.15);
+  }
+  .formRow {
+    flex-direction: row;
+  }
+  .formRow > .formGroup {
+    flex: 1;
+  }
+}
